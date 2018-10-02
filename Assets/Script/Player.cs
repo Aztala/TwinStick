@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CPIM : MonoBehaviour {
+public class Player : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -11,6 +11,6 @@ public class CPIM : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        print(Input.GetAxis("Horizontal"));
 	}
 }
