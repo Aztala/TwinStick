@@ -39,8 +39,8 @@ namespace UnityStandardAssets.Vehicles.Ball
         {
             // Get the axis and jump input.
 
-            float h = Input.GetAxis("Horizontal");
-            float v = Input.GetAxis("Vertical");
+            float v = Input.GetAxis("Horizontal");
+            float h = Input.GetAxis("Vertical");
             jump = Input.GetButton("Jump");
 
             // calculate move direction
