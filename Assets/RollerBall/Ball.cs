@@ -21,6 +21,14 @@ namespace UnityStandardAssets.Vehicles.Ball
             GetComponent<Rigidbody>().maxAngularVelocity = m_MaxAngularVelocity;
         }
 
+        public void Move(bool jump)
+        {
+            if (Physics.Raycast( transform.position, -Vector3.up, k_GroundRayLength ) && jump)
+            {
+                // ... add force in upwards.
+                m_Rigidbody.AddForce( Vector3.up * m_JumpPower, ForceMode.Impulse );
+            }
+        }
 
         public void Move(Vector3 moveDirection, bool jump)
         {
