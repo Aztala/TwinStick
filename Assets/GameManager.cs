@@ -6,12 +6,13 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour {
 
     public bool isRecording = true;
-    private bool Gamepaused = false;
     public Text GamePausedText;
 
+    private static float FixedDeltaTime;
+    private bool Gamepaused = false;
 	// Use this for initialization
 	void Start () {
-      
+        FixedDeltaTime = Time.fixedDeltaTime;
 	}
 	
 	// Update is called once per frame
@@ -36,6 +37,7 @@ public class GameManager : MonoBehaviour {
         {
             Gamepaused = !Gamepaused;
             Time.timeScale = 0;
+            Time.fixedDeltaTime = 0;
             print( "Game is Paused as : " + Gamepaused );
             GamePausedText.GetComponent<Text>().enabled = true;
         }
@@ -43,6 +45,7 @@ public class GameManager : MonoBehaviour {
         {
             Gamepaused = !Gamepaused;
             Time.timeScale = 1;
+            Time.fixedDeltaTime = FixedDeltaTime;
             print( "Game is Paused as : " + Gamepaused );
             GamePausedText.GetComponent<Text>().enabled = false;
 

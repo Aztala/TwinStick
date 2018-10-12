@@ -18,6 +18,10 @@ public class FollowCam : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        this.transform.position = DistanceFromBall + ball.transform.position;
+        
 	}
+    private void LateUpdate()
+    {
+        this.transform.position = DistanceFromBall + ball.transform.position;
+    }
 }
