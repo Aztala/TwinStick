@@ -17,8 +17,8 @@ public class SelfieStick : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        armRotation.y += Input.GetAxis("RVert") * panSpeed;
-        armRotation.x += Input.GetAxis("RHoriz") * panSpeed;
+        armRotation.x += Input.GetAxis("RVert") * panSpeed;
+        armRotation.y += Input.GetAxis("RHoriz") * panSpeed;
         transform.position = player.transform.position;
         transform.rotation = Quaternion.Euler( armRotation );
 	}
